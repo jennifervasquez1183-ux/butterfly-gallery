@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <nav class="flex-nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="image.html">Gallery</a></li>
+    <li><a href="animation.html">Transformation</a></li>
+    <li><a href="movement.html">Movement</a></li>
+  </ul>
+</nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Butterfly Transformation</h1>
+  <nav class="flex-nav">
+    <ul>
+      <li><a href="index.html">Home - Me & Videos</a></li>
+      <li><a href="image.html">Gallery</a></li>
+      <li><a href="animation.html" class="active">Transformation</a></li>
+      <li><a href="movement.html">Movement</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="grid-layout">
+  <section>
+    <h2>The Beginning</h2>
+    <p>Growth, change, beauty — caterpillar to cocoon to butterfly.<br><br>Like my journey from Dominican Republic to NYC. Transformation is not linear. It's layered, soft, powerful.</p>
+  </section>
+  <section>
+    <img src="Gallery/nathan-dumlao-mNLymMqX7iE-unsplash.jpg" alt="Butterfly emerging" id="moveImg">
+  </section>
+</main>
+
+<footer>
+  <nav class="flex-nav">
+    <ul>
+      <li><a href="index.html">Home - Me & Videos</a></li>
+      <li><a href="image.html">Gallery</a></li>
+      <li><a href="animation.html" class="active">Transformation</a></li>
+      <li><a href="movement.html">Movement</a></li>
+    </ul>
+  </nav>
+  <p>Created by Jennifer Vasquez — Transformation is life</p>
+</footer>
+
+<script>
+  document.addEventListener('mousemove', (e) => {
+    const img = document.getElementById('moveImg');
+    if(img){
+      const x = (e.clientX / window.innerWidth - 0.5) * 30;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      img.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+    }
+  });
+</script>
+</body>
+</html>
