@@ -5,14 +5,21 @@
   <title>Jennifer Vasquez</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    .video-grid{display:grid;grid-template-columns:1fr;gap:7rem;max-width:1100px;margin:auto;padding:4rem 2rem;}
-    .video-card{background:rgba(255,255,255,0.97);padding:2.5rem;border-radius:30px;box-shadow:0 15px 40px rgba(0,0,0,0.2);transition:0.4s;}
-    .video-card:hover{transform:scale(1.03);}
-    .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:22px;background:#000;transform:scale(1.08);transition:0.4s;}
-    .video-card:hover .video-wrapper{transform:scale(1.12);}
-    .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
-    .video-card h2{font-size:30px;margin:22px 0 10px;color:#9c96ef;}
-    .video-card p{font-size:19px;color:#333;}
+    .video-grid{display:grid;grid-template-columns:1fr;gap:4rem;max-width:1000px;margin:auto;padding:3rem 2rem;}
+    .video-card{background:#fff;padding:1.8rem;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
+    .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:18px;background:#000;cursor:pointer;}
+    .video-wrapper img.thumb{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;}
+    .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:70px;background:rgba(255,255,255,0.9);width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:0.3s;}
+    .video-wrapper:hover .play-btn{transform:translate(-50%,-50%) scale(1.1);}
+    .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;display:none;}
+    .video-card h2{font-size:26px;margin:18px 0 8px;color:#6b5ce7;}
+    .video-card p{font-size:18px;color:#333;line-height:1.6;}
+    /* Profile zoom */
+    .profile-pic{width:100%;max-width:340px;border-radius:50%;border:5px solid white;cursor:zoom-in;transition:0.4s;box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+    .profile-pic:hover{transform:scale(1.05);}
+    .profile-pic.zoomed{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(1.8);z-index:9999;border-radius:20px;max-width:80vw;max-height:80vh;width:auto;aspect-ratio:auto;}
+    .overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:9998;}
+    .overlay.show{display:block;}
   </style>
 </head>
 <body>
@@ -25,32 +32,66 @@
     <li><a href="./movement.html">Movement</a></li>
   </ul></nav>
 </header>
+
 <main>
-  <section class="hero" style="display:grid;grid-template-columns:420px 1fr;gap:4rem;padding:5rem 4rem;max-width:1300px;margin:auto;align-items:center;">
-    <img src="Gallery/me.jpeg" style="width:100%;max-width:380px;border-radius:50%;border:6px solid white;">
-    <div><h2 style="font-size:3.2rem;color:#9c96ef;">Jennifer Vasquez</h2><p style="font-size:20px;line-height:1.9;"><strong>Editor | Coder | Producer | Documentaries</strong><br>Hunter College — aspiring Professor.<br><br>My Work: Women NYC interviews + 2D animations Dominican Republic Cibao.</p></div>
+  <section class="hero">
+    <img src="Gallery/me.jpeg" class="profile-pic" id="profilePic" alt="Jennifer Vasquez">
+    <div><h2 style="font-size:3rem;color:#6b5ce7;">Jennifer Vasquez</h2>
+    <p style="font-size:19px;line-height:1.8;"><strong>Editor | Producer | Documentarian | Hunter College</strong><br><br>
+    B.A. in Arts - Aspiring Professor of Art & Production. My work explores transformation, movement, and labor through intimate portraits of women in NYC. <strong>Butterfly Gallery</strong> documents diverse labor — care work, salon work, dance — examining how movement shapes identity.</p>
+    <p><em>"I teach how to see — film is not just what we watch, it's how we understand each other."</em></p>
+    </div>
   </section>
 
   <section class="video-grid">
-    <!-- 1 - YOUR SHORT ONE vKai0MpeuTs - CORRECT -->
-    <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/vKai0MpeuTs?autoplay=1&mute=1&loop=1&playlist=vKai0MpeuTs&rel=0&controls=1" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div><h2>NEW SHORT - vKai0MpeuTs</h2><p>https://youtu.be/vKai0MpeuTs - THIS IS THE SHORT ONE - super zoomed</p></div>
-    
-    <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/I_6SyZteJhc?autoplay=1&mute=1&loop=1&playlist=I_6SyZteJhc&rel=0&controls=1" allow="autoplay; fullscreen" loading="lazy" allowfullscreen></iframe></div><h2>Women NYC - Different Jobs</h2><p>Interviews women NYC</p></div>
-    <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YdvG4Dpen4M?autoplay=1&mute=1&loop=1&playlist=YdvG4Dpen4M&rel=0&controls=1" allow="autoplay; fullscreen" loading="lazy" allowfullscreen></iframe></div><h2>Cibao Project 2D</h2><p>Dominican Republic 2D animation</p></div>
-    <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/WWSYSSaY3Yo?autoplay=1&mute=1&loop=1&playlist=WWSYSSaY3Yo&rel=0&controls=1" allow="autoplay; fullscreen" loading="lazy" allowfullscreen></iframe></div><h2>2D Animation Text</h2><p>Environment text motion</p></div>
-    <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/hb7jfV55O9o?autoplay=1&mute=1&loop=1&playlist=hb7jfV55O9o&rel=0&controls=1" allow="autoplay; fullscreen" loading="lazy" allowfullscreen></iframe></div><h2>Poem DR</h2><p>2D visual poetry</p></div>
-    <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/BPYR0HgJZUU?autoplay=1&mute=1&loop=1&playlist=BPYR0HgJZUU&rel=0&controls=1" allow="autoplay; fullscreen" loading="lazy" allowfullscreen></iframe></div><h2>Earthquake Film</h2><p>Documentary short</p></div>
-    <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/BC32ae4nMHk?autoplay=1&mute=1&loop=1&playlist=BC32ae4nMHk&rel=0&controls=1" allow="autoplay; fullscreen" loading="lazy" allowfullscreen></iframe></div><h2>Jen Dulce - DR</h2><p>Documentary Dominican Republic</p></div>
-    <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/8I6Am9syWYQ?autoplay=1&mute=1&loop=1&playlist=8I6Am9syWYQ&rel=0&controls=1" allow="autoplay; fullscreen" loading="lazy" allowfullscreen></iframe></div><h2>Official Dance Film</h2><p>Movement choreography</p></div>
-    <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/kq01Oxu5YFI?autoplay=1&mute=1&loop=1&playlist=kq01Oxu5YFI&rel=0&controls=1" allow="autoplay; fullscreen" loading="lazy" allowfullscreen></iframe></div><h2>Nail Close Up</h2><p>Women NYC series close up BIG ZOOM</p></div>
-    <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ALxQ-ta9TBw?autoplay=1&mute=1&loop=1&playlist=ALxQ-ta9TBw&rel=0&controls=1" allow="autoplay; fullscreen" loading="lazy" allowfullscreen></iframe></div><h2>Nail Latin</h2><p>Latina nail tech interview</p></div>
+    <!-- Video cards - click thumb to play, click again to pause -->
+    <div class="video-card"><div class="video-wrapper" onclick="playVideo(this,'vKai0MpeuTs')"><img class="thumb" src="https://img.youtube.com/vi/vKai0MpeuTs/hqdefault.jpg"><div class="play-btn">▶</div><iframe data-src="https://www.youtube.com/embed/vKai0MpeuTs?rel=0&controls=1" allow="fullscreen"></iframe></div><h2>Dominatrex — Power & Labor</h2><p>She puts on leather not to please him, but to finally be the boss. A Latina woman gives the orders — and gets paid for it.</p></div>
+
+    <div class="video-card"><div class="video-wrapper" onclick="playVideo(this,'I_6SyZteJhc')"><img class="thumb" src="https://img.youtube.com/vi/I_6SyZteJhc/hqdefault.jpg"><div class="play-btn">▶</div><iframe data-src="https://www.youtube.com/embed/I_6SyZteJhc?rel=0&controls=1"></iframe></div><h2>Women NYC — Different Jobs</h2><p>Two Jobs, One Woman. Mother in the morning, worker at night — transformation is not magic, it's a second shift.</p></div>
+
+    <div class="video-card"><div class="video-wrapper" onclick="playVideo(this,'YdvG4Dpen4M')"><img class="thumb" src="https://img.youtube.com/vi/YdvG4Dpen4M/hqdefault.jpg"><div class="play-btn">▶</div><iframe data-src="https://www.youtube.com/embed/YdvG4Dpen4M?rel=0&controls=1"></iframe></div><h2>Cibao Baila</h2><p>In Cibao, women don't just dance — they pray with their hips. Every step says: I am still here, I am still joy.</p></div>
+
+    <div class="video-card"><div class="video-wrapper" onclick="playVideo(this,'WWSYSSaY3Yo')"><img class="thumb" src="https://img.youtube.com/vi/WWSYSSaY3Yo/hqdefault.jpg"><div class="play-btn">▶</div><iframe data-src="https://www.youtube.com/embed/WWSYSSaY3Yo?rel=0&controls=1"></iframe></div><h2>2D Animation Text</h2><p>She works after midnight, not because she is broken, but because she pays rent and tuition.</p></div>
+
+    <div class="video-card"><div class="video-wrapper" onclick="playVideo(this,'hb7jfV55O9o')"><img class="thumb" src="https://img.youtube.com/vi/hb7jfV55O9o/hqdefault.jpg"><div class="play-btn">▶</div><iframe data-src="https://www.youtube.com/embed/hb7jfV55O9o?rel=0&controls=1"></iframe></div><h2>Poem DR — Visual Poetry</h2><p>She carries Dominican sugar, NYC rent, and a whole family on a wing.</p></div>
+
+    <div class="video-card"><div class="video-wrapper" onclick="playVideo(this,'BPYR0HgJZUU')"><img class="thumb" src="https://img.youtube.com/vi/BPYR0HgJZUU/hqdefault.jpg"><div class="play-btn">▶</div><iframe data-src="https://www.youtube.com/embed/BPYR0HgJZUU?rel=0&controls=1"></iframe></div><h2>Earthquake Film — Temblor</h2><p>When the earth shook in Dominicana, it wasn't just houses that cracked — it was the phone calls from NYC at 3AM, women asking "Mami, estás bien?"</p></div>
+
+    <div class="video-card"><div class="video-wrapper" onclick="playVideo(this,'BC32ae4nMHk')"><img class="thumb" src="https://img.youtube.com/vi/BC32ae4nMHk/hqdefault.jpg"><div class="play-btn">▶</div><iframe data-src="https://www.youtube.com/embed/BC32ae4nMHk?rel=0&controls=1"></iframe></div><h2>Dulce de Coco</h2><p>She makes dulce with the same hands that braided hair, cleaned houses, signed school papers — sweet because she made it.</p></div>
+
+    <div class="video-card"><div class="video-wrapper" onclick="playVideo(this,'8I6Am9syWYQ')"><img class="thumb" src="https://img.youtube.com/vi/8I6Am9syWYQ/hqdefault.jpg"><div class="play-btn">▶</div><iframe data-src="https://www.youtube.com/embed/8I6Am9syWYQ?rel=0&controls=1"></iframe></div><h2>Dance Student Film</h2><p>She dances while she studies because if she stops moving, she might disappear.</p></div>
+
+    <div class="video-card"><div class="video-wrapper" onclick="playVideo(this,'kq01Oxu5YFI')"><img class="thumb" src="https://img.youtube.com/vi/kq01Oxu5YFI/hqdefault.jpg"><div class="play-btn">▶</div><iframe data-src="https://www.youtube.com/embed/kq01Oxu5YFI?rel=0&controls=1"></iframe></div><h2>Hands That Work — Nail Techs NYC</h2><p>Beauty work is survival work, paid by the tip, held by sisterhood.</p></div>
+
+    <div class="video-card"><div class="video-wrapper" onclick="playVideo(this,'ALxQ-ta9TBw')"><img class="thumb" src="https://img.youtube.com/vi/ALxQ-ta9TBw/hqdefault.jpg"><div class="play-btn">▶</div><iframe data-src="https://www.youtube.com/embed/ALxQ-ta9TBw?rel=0&controls=1"></iframe></div><h2>Chisme & Esmalte</h2><p>In the nail salon, Latina women work and gossip — chisme is not drama, it's the news network that men don't hear.</p></div>
   </section>
 </main>
+
+<div class="overlay" id="overlay" onclick="closeZoom()"></div>
+
 <footer>
-  <nav class="flex-nav"><ul>
-    <li><a href="./index.html">Home</a></li><li><a href="./image.html">Gallery</a></li><li><a href="./animation.html">Transformation</a></li><li><a href="./movement.html">Movement</a></li>
-  </ul></nav>
-  <p>Created by Jennifer Vasquez | Hunter College</p>
+  <nav class="flex-nav"><ul><li><a href="./index.html">Home</a></li><li><a href="./image.html">Gallery</a></li><li><a href="./animation.html">Transformation</a></li><li><a href="./movement.html">Movement</a></li></ul></nav>
+  <p>Created by Jennifer Vasquez | Hunter College — Aspiring Professor</p>
 </footer>
+
+<script>
+function playVideo(wrapper, id){
+  let iframe = wrapper.querySelector('iframe');
+  let thumb = wrapper.querySelector('.thumb');
+  let btn = wrapper.querySelector('.play-btn');
+  if(iframe.style.display==='block'){
+    iframe.style.display='none'; thumb.style.display='block'; btn.style.display='flex';
+    iframe.src='';
+  } else {
+    iframe.src = iframe.dataset.src + '?autoplay=1';
+    iframe.style.display='block'; thumb.style.display='none'; btn.style.display='none';
+  }
+}
+// Profile zoom
+const pic=document.getElementById('profilePic');
+const over=document.getElementById('overlay');
+pic.addEventListener('click',()=>{pic.classList.add('zoomed');over.classList.add('show');});
+function closeZoom(){pic.classList.remove('zoomed');over.classList.remove('show');}
+</script>
 </body>
 </html>

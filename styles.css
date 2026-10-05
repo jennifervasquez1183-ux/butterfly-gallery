@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Kablammo&display=swap');
 
 * { box-sizing: border-box; }
@@ -5,7 +7,8 @@
 body {
   font-family: 'Poppins', sans-serif;
   color: #4a2a2a;
-  background: linear-gradient(135deg, #D3C2FB, #d773dc);
+background: linear-gradient(135deg, #e8e0ff, #f5d6f7);
+color: #5a4fcf;
   margin: 0;
   padding: 0;
   line-height: 1.8;
@@ -23,14 +26,14 @@ h1, h2, .kablammo {
 }
 
 header {
-  background-color: #97e9fd;
+ background-color: #b8e8f5; 
   padding: 1.5rem;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 footer {
-  background-color: #a24eff;
+  background-color: #6b5ce7;
   padding: 2rem 1.5rem;
   text-align: center;
   color: #C8B9ED;
